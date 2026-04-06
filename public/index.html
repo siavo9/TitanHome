@@ -246,13 +246,6 @@
       overflow: hidden;
       box-shadow: var(--shadow-lg);
     }
-    .ba-before, .ba-after {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-    }
     .ba-after { clip-path: inset(0 50% 0 0); transition: clip-path 0.5s ease; }
     .ba-before-img, .ba-after-img {
       width: 100%;
@@ -713,20 +706,7 @@
         </div>
       </div>
       <div class="hero-image">
-        <div class="ba-container" id="heroSlider">
-          <div class="ba-before">
-            <img class="ba-before-img" src="https://images.unsplash.com/photo-1721395286594-8913b06056eb?w=800&h=600&fit=crop&q=80" alt="After - clean renovated room" style="width:100%;height:100%;object-fit:cover;">
-          </div>
-          <div class="ba-after" id="heroAfter">
-            <img class="ba-after-img" src="https://images.unsplash.com/photo-1516775448597-64ce06b9754e?w=800&h=600&fit=crop&q=80" alt="Before - damaged property interior" style="width:100%;height:100%;object-fit:cover;">
-          </div>
-          <div class="ba-slider-line" id="heroLine"></div>
-          <div class="ba-slider-handle" id="heroHandle">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round"><path d="M8 5l-5 7 5 7M16 5l5 7-5 7"/></svg>
-          </div>
-          <span class="ba-label ba-label-before">Before</span>
-          <span class="ba-label ba-label-after">After</span>
-        </div>
+        <img src="https://images.unsplash.com/photo-1581578949510-fa7315c4c350?w=800&h=600&fit=crop&q=80" alt="Worker deep cleaning a property" style="width:100%;border-radius:var(--radius);box-shadow:var(--shadow-lg);display:block;object-fit:cover;aspect-ratio:4/3;">
       </div>
     </div>
   </section>
@@ -824,21 +804,21 @@
       </div>
       <div class="gallery-grid">
         <div class="gallery-item fade-up">
-          <img src="https://images.unsplash.com/photo-1665507299417-0985dc338ec7?w=600&h=450&fit=crop&q=80" alt="Renovated living room with hardwood floors">
+          <img src="https://images.unsplash.com/photo-1773430272140-e8c995979750?w=600&h=450&fit=crop&q=80" alt="Workers hauling debris from property">
           <div class="gallery-caption">
             <h4>Full Property Trash-Out</h4>
             <p>Tenant move-out damage — Atlanta, GA</p>
           </div>
         </div>
         <div class="gallery-item fade-up">
-          <img src="https://images.unsplash.com/photo-1560184897-1ee3713708ee?w=600&h=450&fit=crop&q=80" alt="Beautiful open-plan living space">
+          <img src="https://images.unsplash.com/photo-1661510870731-2bab113697cb?w=600&h=450&fit=crop&q=80" alt="Cleaning crew working in home">
           <div class="gallery-caption">
             <h4>Deep Home Cleaning</h4>
             <p>Neglected property restoration — Decatur, GA</p>
           </div>
         </div>
         <div class="gallery-item fade-up">
-          <img src="https://images.unsplash.com/photo-1722650363559-2afc2d34c4da?w=600&h=450&fit=crop&q=80" alt="Bright renovated room with polished floors">
+          <img src="https://images.unsplash.com/photo-1768839725085-829e6ac7ac26?w=600&h=450&fit=crop&q=80" alt="Worker repairing and patching walls">
           <div class="gallery-caption">
             <h4>Property Repair & Cleanup</h4>
             <p>Hoarder situation resolved — Marietta, GA</p>
@@ -1050,32 +1030,6 @@
     function closeMobile() {
       mobileMenu.classList.remove('active');
     }
-
-    // ===== HERO BEFORE/AFTER SLIDER =====
-    (function() {
-      const container = document.getElementById('heroSlider');
-      const afterEl = document.getElementById('heroAfter');
-      const line = document.getElementById('heroLine');
-      const handle = document.getElementById('heroHandle');
-      let isDragging = false;
-
-      function updateSlider(x) {
-        const rect = container.getBoundingClientRect();
-        let pct = ((x - rect.left) / rect.width) * 100;
-        pct = Math.max(5, Math.min(95, pct));
-        afterEl.style.clipPath = `inset(0 ${100 - pct}% 0 0)`;
-        line.style.left = pct + '%';
-        handle.style.left = pct + '%';
-      }
-
-      handle.addEventListener('mousedown', (e) => { isDragging = true; e.preventDefault(); });
-      handle.addEventListener('touchstart', (e) => { isDragging = true; });
-      document.addEventListener('mousemove', (e) => { if (isDragging) updateSlider(e.clientX); });
-      document.addEventListener('touchmove', (e) => { if (isDragging) updateSlider(e.touches[0].clientX); });
-      document.addEventListener('mouseup', () => { isDragging = false; });
-      document.addEventListener('touchend', () => { isDragging = false; });
-      container.addEventListener('click', (e) => { updateSlider(e.clientX); });
-    })();
 
     // ===== CONTACT FORM =====
     document.getElementById('contactForm').addEventListener('submit', function(e) {
