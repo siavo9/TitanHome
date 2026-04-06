@@ -387,7 +387,7 @@
     }
     .serve-right .section-subtitle { color: #9CA3AF; }
 
-    /* ===== BEFORE/AFTER GALLERY ===== */
+    /* ===== PORTFOLIO GALLERY ===== */
     .gallery { background: var(--gray-100); }
     .gallery-header { text-align: center; margin-bottom: 48px; }
     .gallery-header .section-subtitle { margin: 0 auto; }
@@ -400,10 +400,16 @@
       border-radius: var(--radius);
       overflow: hidden;
       box-shadow: var(--shadow);
-      cursor: pointer;
       position: relative;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
-    .gallery-item .ba-container { aspect-ratio: 3/2; }
+    .gallery-item:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
+    .gallery-item img {
+      width: 100%;
+      aspect-ratio: 4/3;
+      object-fit: cover;
+      display: block;
+    }
     .gallery-caption {
       background: var(--white);
       padding: 16px;
@@ -411,12 +417,6 @@
     }
     .gallery-caption h4 { font-size: 0.95rem; font-weight: 600; color: var(--gray-900); }
     .gallery-caption p { font-size: 0.8rem; color: var(--gray-500); margin-top: 2px; }
-    .gallery-instruction {
-      text-align: center;
-      margin-top: 20px;
-      font-size: 0.85rem;
-      color: var(--gray-500);
-    }
 
     /* ===== TESTIMONIALS ===== */
     .testimonials { background: var(--white); }
@@ -715,10 +715,10 @@
       <div class="hero-image">
         <div class="ba-container" id="heroSlider">
           <div class="ba-before">
-            <img class="ba-before-img" src="https://images.unsplash.com/photo-1516775448597-64ce06b9754e?w=800&h=600&fit=crop&q=80" alt="Before - damaged property interior" style="width:100%;height:100%;object-fit:cover;">
+            <img class="ba-before-img" src="https://images.unsplash.com/photo-1721395286594-8913b06056eb?w=800&h=600&fit=crop&q=80" alt="After - clean renovated room" style="width:100%;height:100%;object-fit:cover;">
           </div>
           <div class="ba-after" id="heroAfter">
-            <img class="ba-after-img" src="https://images.unsplash.com/photo-1721395286594-8913b06056eb?w=800&h=600&fit=crop&q=80" alt="After - clean renovated room" style="width:100%;height:100%;object-fit:cover;">
+            <img class="ba-after-img" src="https://images.unsplash.com/photo-1516775448597-64ce06b9754e?w=800&h=600&fit=crop&q=80" alt="Before - damaged property interior" style="width:100%;height:100%;object-fit:cover;">
           </div>
           <div class="ba-slider-line" id="heroLine"></div>
           <div class="ba-slider-handle" id="heroHandle">
@@ -819,63 +819,32 @@
     <div class="container">
       <div class="gallery-header fade-up">
         <span class="section-label">Our Work</span>
-        <h2 class="section-title">Before & After Transformations</h2>
-        <p class="section-subtitle">See the kind of results we deliver. Hover or tap to reveal the transformation.</p>
+        <h2 class="section-title">Recent Project Results</h2>
+        <p class="section-subtitle">A look at some of our completed projects across the Greater Atlanta area.</p>
       </div>
       <div class="gallery-grid">
         <div class="gallery-item fade-up">
-          <div class="ba-container gallery-ba" data-id="1">
-            <div class="ba-before">
-              <img class="ba-before-img" src="https://images.unsplash.com/photo-1692890658969-9d1bf60e6111?w=600&h=450&fit=crop&q=80" alt="Before - trashed property" style="width:100%;height:100%;object-fit:cover;">
-            </div>
-            <div class="ba-after gallery-after">
-              <img class="ba-after-img" src="https://images.unsplash.com/photo-1721395283418-8bab9c0ed63e?w=600&h=450&fit=crop&q=80" alt="After - clean empty room" style="width:100%;height:100%;object-fit:cover;">
-            </div>
-            <div class="ba-slider-line gallery-line"></div>
-            <span class="ba-label ba-label-before">Before</span>
-            <span class="ba-label ba-label-after">After</span>
-          </div>
+          <img src="https://images.unsplash.com/photo-1665507299417-0985dc338ec7?w=600&h=450&fit=crop&q=80" alt="Renovated living room with hardwood floors">
           <div class="gallery-caption">
             <h4>Full Property Trash-Out</h4>
             <p>Tenant move-out damage — Atlanta, GA</p>
           </div>
         </div>
         <div class="gallery-item fade-up">
-          <div class="ba-container gallery-ba" data-id="2">
-            <div class="ba-before">
-              <img class="ba-before-img" src="https://images.unsplash.com/photo-1662274585474-73bfa85c95f0?w=600&h=450&fit=crop&q=80" alt="Before - neglected dirty home" style="width:100%;height:100%;object-fit:cover;">
-            </div>
-            <div class="ba-after gallery-after">
-              <img class="ba-after-img" src="https://images.unsplash.com/photo-1722650363559-2afc2d34c4da?w=600&h=450&fit=crop&q=80" alt="After - bright clean room" style="width:100%;height:100%;object-fit:cover;">
-            </div>
-            <div class="ba-slider-line gallery-line"></div>
-            <span class="ba-label ba-label-before">Before</span>
-            <span class="ba-label ba-label-after">After</span>
-          </div>
+          <img src="https://images.unsplash.com/photo-1560184897-1ee3713708ee?w=600&h=450&fit=crop&q=80" alt="Beautiful open-plan living space">
           <div class="gallery-caption">
             <h4>Deep Home Cleaning</h4>
             <p>Neglected property restoration — Decatur, GA</p>
           </div>
         </div>
         <div class="gallery-item fade-up">
-          <div class="ba-container gallery-ba" data-id="3">
-            <div class="ba-before">
-              <img class="ba-before-img" src="https://images.unsplash.com/photo-1632143696877-c7c0d4ae5cc3?w=600&h=450&fit=crop&q=80" alt="Before - damaged property needing repair" style="width:100%;height:100%;object-fit:cover;">
-            </div>
-            <div class="ba-after gallery-after">
-              <img class="ba-after-img" src="https://images.unsplash.com/photo-1665507299417-0985dc338ec7?w=600&h=450&fit=crop&q=80" alt="After - repaired clean room" style="width:100%;height:100%;object-fit:cover;">
-            </div>
-            <div class="ba-slider-line gallery-line"></div>
-            <span class="ba-label ba-label-before">Before</span>
-            <span class="ba-label ba-label-after">After</span>
-          </div>
+          <img src="https://images.unsplash.com/photo-1722650363559-2afc2d34c4da?w=600&h=450&fit=crop&q=80" alt="Bright renovated room with polished floors">
           <div class="gallery-caption">
             <h4>Property Repair & Cleanup</h4>
             <p>Hoarder situation resolved — Marietta, GA</p>
           </div>
         </div>
       </div>
-      <p class="gallery-instruction">Hover over images to see the transformation</p>
     </div>
   </section>
 
@@ -1107,30 +1076,6 @@
       document.addEventListener('touchend', () => { isDragging = false; });
       container.addEventListener('click', (e) => { updateSlider(e.clientX); });
     })();
-
-    // ===== GALLERY HOVER REVEAL =====
-    document.querySelectorAll('.gallery-ba').forEach(item => {
-      const afterEl = item.querySelector('.gallery-after');
-      const line = item.querySelector('.gallery-line');
-
-      item.addEventListener('mouseenter', () => {
-        afterEl.style.clipPath = 'inset(0 0 0 0)';
-        line.style.left = '100%';
-      });
-      item.addEventListener('mouseleave', () => {
-        afterEl.style.clipPath = 'inset(0 50% 0 0)';
-        line.style.left = '50%';
-      });
-      // Touch support
-      item.addEventListener('touchstart', () => {
-        afterEl.style.clipPath = 'inset(0 0 0 0)';
-        line.style.left = '100%';
-      });
-      item.addEventListener('touchend', () => {
-        afterEl.style.clipPath = 'inset(0 50% 0 0)';
-        line.style.left = '50%';
-      });
-    });
 
     // ===== CONTACT FORM =====
     document.getElementById('contactForm').addEventListener('submit', function(e) {
