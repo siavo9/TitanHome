@@ -302,33 +302,7 @@
     .ba-label-before { left: 16px; }
     .ba-label-after { right: 16px; }
 
-    /* Placeholder images using CSS gradients */
-    .placeholder-before {
-      background: linear-gradient(135deg, #8B7355 0%, #6B5B45 30%, #5C4A35 60%, #4A3C2B 100%);
-      position: relative;
-    }
-    .placeholder-before::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background:
-        radial-gradient(circle at 20% 40%, rgba(80,60,40,0.8) 0%, transparent 30%),
-        radial-gradient(circle at 60% 70%, rgba(90,70,50,0.6) 0%, transparent 25%),
-        radial-gradient(circle at 80% 30%, rgba(70,55,35,0.7) 0%, transparent 20%);
-    }
-    .placeholder-after {
-      background: linear-gradient(135deg, #F5E6D3 0%, #E8D5C0 30%, #DCC8B0 60%, #D4BC9A 100%);
-      position: relative;
-    }
-    .placeholder-after::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background:
-        linear-gradient(90deg, transparent 49.5%, rgba(200,180,160,0.3) 49.5%, rgba(200,180,160,0.3) 50.5%, transparent 50.5%),
-        linear-gradient(0deg, transparent 49.5%, rgba(200,180,160,0.2) 49.5%, rgba(200,180,160,0.2) 50.5%, transparent 50.5%);
-      background-size: 60px 60px;
-    }
+    /* Before/After images */
 
     /* ===== SERVICES ===== */
     .services { background: var(--white); }
@@ -741,14 +715,10 @@
       <div class="hero-image">
         <div class="ba-container" id="heroSlider">
           <div class="ba-before">
-            <div class="ba-before-img placeholder-before" style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;">
-              <span style="color:rgba(255,255,255,0.5);font-weight:700;font-size:1.5rem;text-transform:uppercase;letter-spacing:0.1em;">Before</span>
-            </div>
+            <img class="ba-before-img" src="https://images.unsplash.com/photo-1516775448597-64ce06b9754e?w=800&h=600&fit=crop&q=80" alt="Before - damaged property interior" style="width:100%;height:100%;object-fit:cover;">
           </div>
           <div class="ba-after" id="heroAfter">
-            <div class="ba-after-img placeholder-after" style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;">
-              <span style="color:rgba(0,0,0,0.3);font-weight:700;font-size:1.5rem;text-transform:uppercase;letter-spacing:0.1em;">After</span>
-            </div>
+            <img class="ba-after-img" src="https://images.unsplash.com/photo-1721395286594-8913b06056eb?w=800&h=600&fit=crop&q=80" alt="After - clean renovated room" style="width:100%;height:100%;object-fit:cover;">
           </div>
           <div class="ba-slider-line" id="heroLine"></div>
           <div class="ba-slider-handle" id="heroHandle">
@@ -856,14 +826,10 @@
         <div class="gallery-item fade-up">
           <div class="ba-container gallery-ba" data-id="1">
             <div class="ba-before">
-              <div class="ba-before-img placeholder-before" style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#7a6552,#5c4a38);">
-                <span style="color:rgba(255,255,255,0.4);font-weight:700;font-size:1rem;text-transform:uppercase;">Before</span>
-              </div>
+              <img class="ba-before-img" src="https://images.unsplash.com/photo-1692890658969-9d1bf60e6111?w=600&h=450&fit=crop&q=80" alt="Before - trashed property" style="width:100%;height:100%;object-fit:cover;">
             </div>
             <div class="ba-after gallery-after">
-              <div class="ba-after-img placeholder-after" style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#f0e0cc,#d4c0a8);">
-                <span style="color:rgba(0,0,0,0.25);font-weight:700;font-size:1rem;text-transform:uppercase;">After</span>
-              </div>
+              <img class="ba-after-img" src="https://images.unsplash.com/photo-1721395283418-8bab9c0ed63e?w=600&h=450&fit=crop&q=80" alt="After - clean empty room" style="width:100%;height:100%;object-fit:cover;">
             </div>
             <div class="ba-slider-line gallery-line"></div>
             <span class="ba-label ba-label-before">Before</span>
@@ -877,14 +843,10 @@
         <div class="gallery-item fade-up">
           <div class="ba-container gallery-ba" data-id="2">
             <div class="ba-before">
-              <div class="ba-before-img placeholder-before" style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#6e5d4a,#4f3e2f);">
-                <span style="color:rgba(255,255,255,0.4);font-weight:700;font-size:1rem;text-transform:uppercase;">Before</span>
-              </div>
+              <img class="ba-before-img" src="https://images.unsplash.com/photo-1662274585474-73bfa85c95f0?w=600&h=450&fit=crop&q=80" alt="Before - neglected dirty home" style="width:100%;height:100%;object-fit:cover;">
             </div>
             <div class="ba-after gallery-after">
-              <div class="ba-after-img placeholder-after" style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#e8d8c4,#c8b8a0);">
-                <span style="color:rgba(0,0,0,0.25);font-weight:700;font-size:1rem;text-transform:uppercase;">After</span>
-              </div>
+              <img class="ba-after-img" src="https://images.unsplash.com/photo-1722650363559-2afc2d34c4da?w=600&h=450&fit=crop&q=80" alt="After - bright clean room" style="width:100%;height:100%;object-fit:cover;">
             </div>
             <div class="ba-slider-line gallery-line"></div>
             <span class="ba-label ba-label-before">Before</span>
@@ -898,14 +860,10 @@
         <div class="gallery-item fade-up">
           <div class="ba-container gallery-ba" data-id="3">
             <div class="ba-before">
-              <div class="ba-before-img placeholder-before" style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#8a7560,#6b5940);">
-                <span style="color:rgba(255,255,255,0.4);font-weight:700;font-size:1rem;text-transform:uppercase;">Before</span>
-              </div>
+              <img class="ba-before-img" src="https://images.unsplash.com/photo-1632143696877-c7c0d4ae5cc3?w=600&h=450&fit=crop&q=80" alt="Before - damaged property needing repair" style="width:100%;height:100%;object-fit:cover;">
             </div>
             <div class="ba-after gallery-after">
-              <div class="ba-after-img placeholder-after" style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#f5e8d5,#ddd0b8);">
-                <span style="color:rgba(0,0,0,0.25);font-weight:700;font-size:1rem;text-transform:uppercase;">After</span>
-              </div>
+              <img class="ba-after-img" src="https://images.unsplash.com/photo-1665507299417-0985dc338ec7?w=600&h=450&fit=crop&q=80" alt="After - repaired clean room" style="width:100%;height:100%;object-fit:cover;">
             </div>
             <div class="ba-slider-line gallery-line"></div>
             <span class="ba-label ba-label-before">Before</span>
