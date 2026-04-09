@@ -310,24 +310,38 @@
       background: var(--white);
       border: 1px solid var(--gray-200);
       border-radius: var(--radius);
-      padding: 36px 28px;
+      overflow: hidden;
       text-align: center;
       transition: all 0.3s ease;
+      display: flex;
+      flex-direction: column;
     }
     .service-card:hover {
       transform: translateY(-6px);
       box-shadow: var(--shadow-lg);
       border-color: var(--orange);
     }
+    .service-card-image {
+      width: 100%;
+      aspect-ratio: 4/3;
+      object-fit: cover;
+      display: block;
+    }
+    .service-card-body {
+      padding: 28px 28px 32px;
+      position: relative;
+    }
     .service-icon {
-      width: 64px;
-      height: 64px;
+      width: 56px;
+      height: 56px;
       background: var(--orange-light);
-      border-radius: 16px;
+      border-radius: 14px;
       display: flex;
       align-items: center;
       justify-content: center;
-      margin: 0 auto 20px;
+      margin: -56px auto 16px;
+      border: 4px solid var(--white);
+      box-shadow: var(--shadow);
     }
     .service-card h3 {
       font-size: 1.2rem;
@@ -662,7 +676,6 @@
       </a>
       <div class="nav-links">
         <a href="#services">Services</a>
-        <a href="#gallery">Gallery</a>
         <a href="#testimonials">Reviews</a>
         <a href="https://www.facebook.com/profile.php?id=61574520152725" target="_blank" rel="noopener" class="nav-facebook" aria-label="Facebook">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
@@ -675,7 +688,6 @@
     </div>
     <div class="mobile-menu" id="mobileMenu">
       <a href="#services" onclick="closeMobile()">Services</a>
-      <a href="#gallery" onclick="closeMobile()">Gallery</a>
       <a href="#testimonials" onclick="closeMobile()">Reviews</a>
       <a href="https://www.facebook.com/profile.php?id=61574520152725" target="_blank" rel="noopener">Facebook</a>
       <a href="#contact" class="btn btn-primary" onclick="closeMobile()">Get a Free Quote</a>
@@ -716,25 +728,34 @@
       </div>
       <div class="services-grid">
         <div class="service-card fade-up">
-          <div class="service-icon">
-            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#F97316" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 01-2 2H7a2 2 0 01-2-2V6m3 0V4a2 2 0 012-2h4a2 2 0 012 2v2"/><line x1="10" y1="11" x2="10" y2="17"/><line x1="14" y1="11" x2="14" y2="17"/></svg>
+          <img src="trash.png" alt="Full property trash-out in progress" class="service-card-image">
+          <div class="service-card-body">
+            <div class="service-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#F97316" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 01-2 2H7a2 2 0 01-2-2V6m3 0V4a2 2 0 012-2h4a2 2 0 012 2v2"/><line x1="10" y1="11" x2="10" y2="17"/><line x1="14" y1="11" x2="14" y2="17"/></svg>
+            </div>
+            <h3>Property Trash-Outs</h3>
+            <p>Complete removal of debris, junk, and unwanted items. We clear out properties quickly and thoroughly, no matter how much needs to go.</p>
           </div>
-          <h3>Property Trash-Outs</h3>
-          <p>Complete removal of debris, junk, and unwanted items. We clear out properties quickly and thoroughly, no matter how much needs to go.</p>
         </div>
         <div class="service-card fade-up">
-          <div class="service-icon">
-            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#F97316" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M3 10h18M3 7l9-4 9 4M4 10v11M20 10v11"/><line x1="8" y1="14" x2="8" y2="17"/><line x1="12" y1="14" x2="12" y2="17"/><line x1="16" y1="14" x2="16" y2="17"/></svg>
+          <img src="cleaning.png" alt="Deep home cleaning in progress" class="service-card-image">
+          <div class="service-card-body">
+            <div class="service-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#F97316" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M3 10h18M3 7l9-4 9 4M4 10v11M20 10v11"/><line x1="8" y1="14" x2="8" y2="17"/><line x1="12" y1="14" x2="12" y2="17"/><line x1="16" y1="14" x2="16" y2="17"/></svg>
+            </div>
+            <h3>Deep Cleaning</h3>
+            <p>Heavy-duty cleaning for homes that need serious attention. We tackle the toughest messes to restore properties to a livable, clean condition.</p>
           </div>
-          <h3>Deep Cleaning</h3>
-          <p>Heavy-duty cleaning for homes that need serious attention. We tackle the toughest messes to restore properties to a livable, clean condition.</p>
         </div>
         <div class="service-card fade-up">
-          <div class="service-icon">
-            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#F97316" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>
+          <img src="damage.png" alt="Property repair and cleanup work" class="service-card-image">
+          <div class="service-card-body">
+            <div class="service-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#F97316" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>
+            </div>
+            <h3>Property Repairs</h3>
+            <p>Reliable repair work to restore damaged areas and get homes back in shape. From walls to flooring, we handle the fixes that matter most.</p>
           </div>
-          <h3>Property Repairs</h3>
-          <p>Reliable repair work to restore damaged areas and get homes back in shape. From walls to flooring, we handle the fixes that matter most.</p>
         </div>
       </div>
     </div>
@@ -785,40 +806,6 @@
         <span class="section-label">Who We Help</span>
         <h2 class="section-title" style="color:#fff;">Perfect For Homeowners, Landlords & Property Managers</h2>
         <p class="section-subtitle">Whether you're dealing with the aftermath of bad tenants, years of neglect, or a home that needs a total reset — we've got you covered. No job is too big or too messy for Titan.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== GALLERY ===== -->
-  <section class="gallery section" id="gallery">
-    <div class="container">
-      <div class="gallery-header fade-up">
-        <span class="section-label">Our Work</span>
-        <h2 class="section-title">Recent Project Results</h2>
-        <p class="section-subtitle">A look at some of our completed projects across the Greater Atlanta area.</p>
-      </div>
-      <div class="gallery-grid">
-        <div class="gallery-item fade-up">
-          <img src="trash.png" alt="Full property trash-out in progress">
-          <div class="gallery-caption">
-            <h4>Full Property Trash-Out</h4>
-            <p>Tenant move-out damage — Atlanta, GA</p>
-          </div>
-        </div>
-        <div class="gallery-item fade-up">
-          <img src="cleaning.png" alt="Deep home cleaning in progress">
-          <div class="gallery-caption">
-            <h4>Deep Home Cleaning</h4>
-            <p>Neglected property restoration — Decatur, GA</p>
-          </div>
-        </div>
-        <div class="gallery-item fade-up">
-          <img src="damage.png" alt="Property repair and cleanup work">
-          <div class="gallery-caption">
-            <h4>Property Repair & Cleanup</h4>
-            <p>Hoarder situation resolved — Marietta, GA</p>
-          </div>
-        </div>
       </div>
     </div>
   </section>
@@ -987,7 +974,6 @@
         </div>
         <div class="footer-links">
           <a href="#services">Services</a>
-          <a href="#gallery">Gallery</a>
           <a href="#testimonials">Reviews</a>
           <a href="#contact">Contact</a>
         </div>
