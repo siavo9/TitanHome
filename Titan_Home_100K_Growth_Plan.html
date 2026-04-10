@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Titan Home — $100K in 6 Months Growth Plan</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Inter', -apple-system, sans-serif;
+    background: #0a0a0a;
+    color: #e0e0e0;
+    line-height: 1.6;
+    padding: 40px 20px;
+  }
+
+  .container { max-width: 900px; margin: 0 auto; }
+
+  .hero {
+    text-align: center;
+    padding: 60px 20px;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+    border-radius: 20px;
+    margin-bottom: 40px;
+    border: 1px solid #1e3a5f;
+  }
+
+  .hero h1 {
+    font-size: 2.8em;
+    font-weight: 800;
+    background: linear-gradient(135deg, #4fc3f7, #29b6f6, #0288d1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 10px;
+  }
+
+  .hero .subtitle {
+    font-size: 1.3em;
+    color: #90caf9;
+    font-weight: 500;
+  }
+
+  .hero .goal {
+    margin-top: 20px;
+    font-size: 3em;
+    font-weight: 800;
+    color: #4caf50;
+  }
+
+  .hero .timeline {
+    font-size: 1.1em;
+    color: #a5d6a7;
+    margin-top: 5px;
+  }
+
+  .section {
+    background: #141414;
+    border-radius: 16px;
+    padding: 30px;
+    margin-bottom: 30px;
+    border: 1px solid #2a2a2a;
+  }
+
+  .section h2 {
+    font-size: 1.6em;
+    font-weight: 700;
+    color: #4fc3f7;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #1e3a5f;
+  }
+
+  .section h3 {
+    font-size: 1.2em;
+    font-weight: 600;
+    color: #e0e0e0;
+    margin: 20px 0 10px;
+  }
+
+  .section p { margin-bottom: 12px; color: #bbb; }
+
+  .month-card {
+    background: #1a1a1a;
+    border-radius: 12px;
+    padding: 24px;
+    margin-bottom: 20px;
+    border-left: 4px solid #29b6f6;
+  }
+
+  .month-card.phase1 { border-left-color: #ff9800; }
+  .month-card.phase2 { border-left-color: #4caf50; }
+  .month-card.phase3 { border-left-color: #9c27b0; }
+
+  .month-card .month-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+
+  .month-card .month-name {
+    font-size: 1.3em;
+    font-weight: 700;
+    color: #fff;
+  }
+
+  .month-card .revenue-target {
+    background: #1b5e20;
+    color: #a5d6a7;
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 0.95em;
+  }
+
+  .task-list { list-style: none; padding: 0; }
+
+  .task-list li {
+    padding: 8px 0 8px 24px;
+    position: relative;
+    color: #ccc;
+    font-size: 0.95em;
+  }
+
+  .task-list li::before {
+    content: "▸";
+    position: absolute;
+    left: 4px;
+    color: #4fc3f7;
+    font-weight: bold;
+  }
+
+  .pricing-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 16px;
+    margin-top: 15px;
+  }
+
+  .pricing-card {
+    background: #1a1a1a;
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+    border: 1px solid #333;
+  }
+
+  .pricing-card .service-name {
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 8px;
+    font-size: 1.05em;
+  }
+
+  .pricing-card .price {
+    font-size: 1.5em;
+    font-weight: 800;
+    color: #4caf50;
+    margin-bottom: 4px;
+  }
+
+  .pricing-card .detail {
+    font-size: 0.85em;
+    color: #999;
+  }
+
+  .kpi-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    margin: 20px 0;
+  }
+
+  .kpi-card {
+    background: #1a1a1a;
+    border-radius: 12px;
+    padding: 16px;
+    text-align: center;
+    border: 1px solid #333;
+  }
+
+  .kpi-card .number {
+    font-size: 1.8em;
+    font-weight: 800;
+    color: #4fc3f7;
+  }
+
+  .kpi-card .label {
+    font-size: 0.8em;
+    color: #999;
+    margin-top: 4px;
+  }
+
+  .daily-block {
+    background: #1a1a2e;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 12px;
+    border: 1px solid #1e3a5f;
+  }
+
+  .daily-block .time {
+    font-weight: 700;
+    color: #ff9800;
+    font-size: 0.9em;
+    margin-bottom: 6px;
+  }
+
+  .highlight {
+    background: linear-gradient(135deg, #1b5e20, #2e7d32);
+    border: 1px solid #388e3c;
+    border-radius: 12px;
+    padding: 20px;
+    margin: 20px 0;
+  }
+
+  .highlight p { color: #c8e6c9; }
+
+  .formula {
+    background: #1a1a2e;
+    border-radius: 12px;
+    padding: 24px;
+    margin: 20px 0;
+    border: 1px solid #1e3a5f;
+    text-align: center;
+  }
+
+  .formula .big {
+    font-size: 1.6em;
+    font-weight: 800;
+    color: #fff;
+    margin-bottom: 8px;
+  }
+
+  .formula .detail { color: #90caf9; font-size: 0.95em; }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 15px 0;
+  }
+
+  th {
+    background: #1a1a2e;
+    color: #4fc3f7;
+    padding: 12px;
+    text-align: left;
+    font-weight: 600;
+    font-size: 0.9em;
+  }
+
+  td {
+    padding: 10px 12px;
+    border-bottom: 1px solid #2a2a2a;
+    color: #ccc;
+    font-size: 0.9em;
+  }
+
+  tr:hover td { background: #1a1a1a; }
+
+  @media (max-width: 700px) {
+    .pricing-grid, .kpi-grid { grid-template-columns: 1fr 1fr; }
+    .hero h1 { font-size: 2em; }
+    .hero .goal { font-size: 2.2em; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<!-- HERO -->
+<div class="hero">
+  <h1>TITAN HOME</h1>
+  <div class="subtitle">6-Month Growth Playbook</div>
+  <div class="goal">$100,000</div>
+  <div class="timeline">April 2026 → September 2026</div>
+</div>
+
+<!-- THE MATH -->
+<div class="section">
+  <h2>The Math — How We Get There</h2>
+
+  <div class="formula">
+    <div class="big">$100K ÷ 6 months = $16,667/month average</div>
+    <div class="detail">But we ramp up — starting smaller, finishing bigger</div>
+  </div>
+
+  <table>
+    <tr><th>Month</th><th>Phase</th><th>Revenue Target</th><th>Cumulative</th><th>Jobs Needed</th></tr>
+    <tr><td>Month 1 (Apr)</td><td>Foundation</td><td>$5,000</td><td>$5,000</td><td>10-15 jobs</td></tr>
+    <tr><td>Month 2 (May)</td><td>Foundation</td><td>$10,000</td><td>$15,000</td><td>20-25 jobs</td></tr>
+    <tr><td>Month 3 (Jun)</td><td>Growth</td><td>$15,000</td><td>$30,000</td><td>25-35 jobs</td></tr>
+    <tr><td>Month 4 (Jul)</td><td>Growth</td><td>$20,000</td><td>$50,000</td><td>30-40 jobs</td></tr>
+    <tr><td>Month 5 (Aug)</td><td>Scale</td><td>$23,000</td><td>$73,000</td><td>35-45 jobs</td></tr>
+    <tr><td>Month 6 (Sep)</td><td>Scale</td><td>$27,000</td><td>$100,000</td><td>40-50 jobs</td></tr>
+  </table>
+</div>
+
+<!-- HIGH-PROFIT SERVICES -->
+<div class="section">
+  <h2>Services & Pricing — What to Focus On</h2>
+  <p>Not all jobs are equal. Here's your priority order based on profit margin and demand.</p>
+
+  <div class="pricing-grid">
+    <div class="pricing-card">
+      <div class="service-name">Estate/Home Cleanouts</div>
+      <div class="price">$800–$3,000+</div>
+      <div class="detail">HIGHEST PROFIT. Full house cleanouts for estates, evictions, hoarder homes. Target realtors & property managers.</div>
+    </div>
+    <div class="pricing-card">
+      <div class="service-name">Construction Debris Removal</div>
+      <div class="price">$500–$2,000</div>
+      <div class="detail">Partner with contractors. Recurring work. They always need someone reliable.</div>
+    </div>
+    <div class="pricing-card">
+      <div class="service-name">Home Repairs</div>
+      <div class="price">$200–$1,500</div>
+      <div class="detail">Drywall, painting, fixtures, decks. Upsell after every cleanout — "while we're here..."</div>
+    </div>
+  </div>
+
+  <div class="pricing-grid" style="margin-top: 0;">
+    <div class="pricing-card">
+      <div class="service-name">Junk/Trash Removal</div>
+      <div class="price">$150–$600</div>
+      <div class="detail">Quick cash, easy to book. High volume. Great for filling schedule gaps.</div>
+    </div>
+    <div class="pricing-card">
+      <div class="service-name">Garage/Basement Cleanouts</div>
+      <div class="price">$300–$1,000</div>
+      <div class="detail">Bread and butter. Every homeowner needs this eventually.</div>
+    </div>
+    <div class="pricing-card">
+      <div class="service-name">Commercial Cleanouts</div>
+      <div class="price">$1,000–$5,000+</div>
+      <div class="detail">Office moves, retail spaces. Bigger jobs, bigger checks. Pursue after Month 2.</div>
+    </div>
+  </div>
+
+  <div class="highlight">
+    <p><strong>Key Strategy:</strong> Every cleanout is a repair opportunity. Every repair visit is a cleanout opportunity. Always upsell the second service. A $400 junk removal becomes $800 when you fix their fence too.</p>
+  </div>
+</div>
+
+<!-- MONTH BY MONTH PLAN -->
+<div class="section">
+  <h2>Month-by-Month Execution Plan</h2>
+
+  <!-- MONTH 1 -->
+  <div class="month-card phase1">
+    <div class="month-header">
+      <div class="month-name">MONTH 1 — Foundation (April)</div>
+      <div class="revenue-target">Target: $5,000</div>
+    </div>
+    <h3>Marketing Setup (Week 1-2)</h3>
+    <ul class="task-list">
+      <li>Set up Google Business Profile — CRITICAL. Add photos of work, service areas, hours. This is your #1 lead source.</li>
+      <li>Get on Yelp, Thumbtack, TaskRabbit, and Nextdoor — these platforms send leads immediately</li>
+      <li>Launch Facebook Business page. Post before/after photos of EVERY job</li>
+      <li>Start Google Ads — budget $15-20/day on "junk removal near me", "cleanout services [city]", "trash removal [city]"</li>
+      <li>Print 500 door hangers/flyers — hit neighborhoods near recent jobs</li>
+      <li>Order vehicle magnets or wraps with phone number + website</li>
+    </ul>
+    <h3>Relationship Building (Week 2-4)</h3>
+    <ul class="task-list">
+      <li>Visit 10 real estate offices. Drop off cards. Realtors need cleanout help for listings CONSTANTLY</li>
+      <li>Contact 10 property management companies — eviction cleanouts are steady, recurring work</li>
+      <li>Join your local Facebook community groups. Offer a "first job 10% off" deal</li>
+      <li>Introduce yourself to 5 general contractors — offer to be their debris removal partner</li>
+    </ul>
+    <h3>Operations</h3>
+    <ul class="task-list">
+      <li>Create a simple CRM (even a Google Sheet) — track every lead, quote, and job</li>
+      <li>Set up QuickBooks or Wave for invoicing — look professional from Day 1</li>
+      <li>Build a pricing guide so you can quote fast on calls</li>
+      <li>Get liability insurance if you don't have it — required for commercial work</li>
+    </ul>
+  </div>
+
+  <!-- MONTH 2 -->
+  <div class="month-card phase1">
+    <div class="month-header">
+      <div class="month-name">MONTH 2 — Momentum (May)</div>
+      <div class="revenue-target">Target: $10,000</div>
+    </div>
+    <h3>Lead Generation Ramp</h3>
+    <ul class="task-list">
+      <li>Increase Google Ads to $25/day if Month 1 ROI was positive</li>
+      <li>Ask EVERY completed customer for a Google review — goal: 15+ reviews by end of May</li>
+      <li>Post 3x per week on social media — before/after photos, time-lapse videos of cleanouts</li>
+      <li>Start a referral program: $50 cash or credit for every referral that books</li>
+      <li>Knock on doors in neighborhoods where you just completed a visible job</li>
+    </ul>
+    <h3>Revenue Boosters</h3>
+    <ul class="task-list">
+      <li>Start quoting home repairs alongside every cleanout — target 30% upsell rate</li>
+      <li>Reach out to 5 commercial property managers for office/retail cleanouts</li>
+      <li>Partner with a local moving company — they always have clients who need junk hauled</li>
+      <li>List on HomeAdvisor/Angi — these generate warm leads willing to pay</li>
+    </ul>
+  </div>
+
+  <!-- MONTH 3 -->
+  <div class="month-card phase2">
+    <div class="month-header">
+      <div class="month-name">MONTH 3 — Growth Mode (June)</div>
+      <div class="revenue-target">Target: $15,000</div>
+    </div>
+    <h3>Scaling Operations</h3>
+    <ul class="task-list">
+      <li>Hire or bring on a second crew if you're turning down work</li>
+      <li>Raise prices 10-15% — you now have reviews and reputation to justify it</li>
+      <li>Offer "summer cleanout specials" — garages, basements, yards</li>
+      <li>Build relationships with estate attorneys — they handle estate sales and need cleanout crews</li>
+      <li>Create a "Titan Home Maintenance Package" — bundle cleanout + basic repairs for landlords</li>
+    </ul>
+    <h3>Marketing Optimization</h3>
+    <ul class="task-list">
+      <li>Review which ad keywords and platforms are converting best — double down on winners</li>
+      <li>Start collecting video testimonials from happy customers</li>
+      <li>Launch a simple email newsletter to past customers — "seasonal reminders" to book again</li>
+    </ul>
+  </div>
+
+  <!-- MONTH 4 -->
+  <div class="month-card phase2">
+    <div class="month-header">
+      <div class="month-name">MONTH 4 — Acceleration (July)</div>
+      <div class="revenue-target">Target: $20,000</div>
+    </div>
+    <ul class="task-list">
+      <li>Target commercial accounts aggressively — one commercial contract can be worth $2K-5K/month</li>
+      <li>Run "Beat the Heat" summer promotions — yard cleanups, garage cleanouts</li>
+      <li>Add a "same-day service" premium option (+25% surcharge)</li>
+      <li>Expand service area by 15 miles if your core area is saturated</li>
+      <li>Aim for 30+ Google reviews — this puts you above most competitors</li>
+      <li>Start tracking customer lifetime value — repeat customers are your goldmine</li>
+    </ul>
+  </div>
+
+  <!-- MONTH 5 -->
+  <div class="month-card phase3">
+    <div class="month-header">
+      <div class="month-name">MONTH 5 — Scale (August)</div>
+      <div class="revenue-target">Target: $23,000</div>
+    </div>
+    <ul class="task-list">
+      <li>You should have 2-3 recurring commercial accounts by now</li>
+      <li>Launch "back to school" cleanout campaigns for families</li>
+      <li>Consider adding dumpster rental as a service line — high margin, low labor</li>
+      <li>Hire a part-time admin/dispatcher if call volume is overwhelming you</li>
+      <li>Negotiate better rates at dump/recycling facilities based on volume</li>
+      <li>Start building SOPs so your team can run jobs without you present</li>
+    </ul>
+  </div>
+
+  <!-- MONTH 6 -->
+  <div class="month-card phase3">
+    <div class="month-header">
+      <div class="month-name">MONTH 6 — Close Strong (September)</div>
+      <div class="revenue-target">Target: $27,000</div>
+    </div>
+    <ul class="task-list">
+      <li>Push hard on estate cleanouts — fall is peak season for estate sales</li>
+      <li>Re-engage every past customer with a "fall prep" offer</li>
+      <li>Lock in Q4 commercial contracts before year-end cleanups start</li>
+      <li>Evaluate what got you here — cut what didn't work, triple down on what did</li>
+      <li>Begin planning for $200K Year 2</li>
+    </ul>
+  </div>
+</div>
+
+<!-- DAILY ROUTINE -->
+<div class="section">
+  <h2>Your Daily CEO Routine</h2>
+  <p>This is non-negotiable. Do this every single day.</p>
+
+  <div class="daily-block">
+    <div class="time">6:30 AM — Morning Prep (30 min)</div>
+    <p>Check messages, emails, and missed calls. Respond to every lead within 15 minutes of waking up. Speed wins jobs.</p>
+  </div>
+
+  <div class="daily-block">
+    <div class="time">7:00 AM — Daily Outreach (30 min)</div>
+    <p>Contact 3 new potential partners: realtors, property managers, contractors, or commercial properties. Every. Single. Day. This is how you build a pipeline.</p>
+  </div>
+
+  <div class="daily-block">
+    <div class="time">7:30 AM – 5:00 PM — Execute Jobs</div>
+    <p>Run your scheduled jobs. Take before/after photos of EVERY job. Get a Google review before you leave the site.</p>
+  </div>
+
+  <div class="daily-block">
+    <div class="time">5:00 PM — End-of-Day Admin (30 min)</div>
+    <p>Send all invoices same day. Follow up on open quotes. Update your CRM. Post one photo/video to social media.</p>
+  </div>
+
+  <div class="daily-block">
+    <div class="time">8:00 PM — Plan Tomorrow (15 min)</div>
+    <p>Confirm next day's jobs. Prep materials list. Set outreach targets for morning.</p>
+  </div>
+</div>
+
+<!-- KPIs -->
+<div class="section">
+  <h2>Weekly KPIs to Track</h2>
+  <p>What gets measured gets managed. Track these every Sunday night.</p>
+
+  <div class="kpi-grid">
+    <div class="kpi-card">
+      <div class="number">20+</div>
+      <div class="label">Leads per week</div>
+    </div>
+    <div class="kpi-card">
+      <div class="number">40%+</div>
+      <div class="label">Close rate</div>
+    </div>
+    <div class="kpi-card">
+      <div class="number">$500+</div>
+      <div class="label">Avg job value</div>
+    </div>
+    <div class="kpi-card">
+      <div class="number">5+</div>
+      <div class="label">Reviews/month</div>
+    </div>
+  </div>
+
+  <table>
+    <tr><th>Metric</th><th>Month 1</th><th>Month 3</th><th>Month 6</th></tr>
+    <tr><td>Google Reviews</td><td>10</td><td>25</td><td>50+</td></tr>
+    <tr><td>Recurring Commercial Accounts</td><td>0</td><td>1-2</td><td>3-5</td></tr>
+    <tr><td>Referral Partners (realtors, PMs, etc.)</td><td>5</td><td>15</td><td>25+</td></tr>
+    <tr><td>Social Media Posts/Week</td><td>3</td><td>5</td><td>5</td></tr>
+    <tr><td>Jobs per Week</td><td>3-4</td><td>7-9</td><td>10-12</td></tr>
+  </table>
+</div>
+
+<!-- TOP PRIORITIES -->
+<div class="section">
+  <h2>Your Top 5 Immediate Actions (This Week)</h2>
+  <div class="highlight">
+    <ul class="task-list">
+      <li><strong>1. Google Business Profile</strong> — If you don't have one, set it up TODAY. Add 5+ photos, your service list, hours, and service area. This is your #1 lead magnet.</li>
+      <li><strong>2. Get on Thumbtack + Nextdoor</strong> — These platforms can generate 5-10 leads per week starting immediately.</li>
+      <li><strong>3. Visit 3 real estate offices</strong> — Walk in, introduce yourself, leave cards. Realtors are your best referral source.</li>
+      <li><strong>4. Launch Google Ads</strong> — $15/day on "junk removal near me" + your city name. Start getting calls this week.</li>
+      <li><strong>5. Price your services</strong> — Write down your minimums and ranges. Fast quoting = more closed deals.</li>
+    </ul>
+  </div>
+</div>
+
+<!-- WEBSITE FEEDBACK -->
+<div class="section">
+  <h2>Website Recommendations (titanhome.app)</h2>
+  <p>I wasn't able to fully crawl your site, but here's what every home services website MUST have to convert visitors into calls:</p>
+  <ul class="task-list">
+    <li><strong>Click-to-call phone number</strong> at the top of every page — BIG and obvious</li>
+    <li><strong>Instant quote form</strong> — name, phone, zip code, service type. Keep it 4 fields max</li>
+    <li><strong>Before/after photo gallery</strong> — nothing sells cleanout services like visual proof</li>
+    <li><strong>Google reviews embedded</strong> — social proof converts browsers into callers</li>
+    <li><strong>Service area map</strong> — people want to know you serve their area</li>
+    <li><strong>Clear pricing ranges</strong> — "Junk removal starting at $150" reduces tire-kickers</li>
+    <li><strong>SEO pages for each service</strong> — separate pages for "junk removal", "estate cleanout", "home repairs" in your city</li>
+  </ul>
+</div>
+
+<div style="text-align: center; padding: 40px; color: #666; font-size: 0.85em;">
+  Titan Home Growth Plan — Built April 2026<br>
+  Prepared by your AI Business Advisor
+</div>
+
+</div>
+</body>
+</html>
